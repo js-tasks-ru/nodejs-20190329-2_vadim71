@@ -3,8 +3,6 @@ function sum(a, b) {
   return a+b;
 else {
   throw TypeError('Not number');
-}
-
   }
-
+}
 module.exports = sum;
