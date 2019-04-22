@@ -9,10 +9,12 @@ class LineSplitStream extends stream.Transform {
   
   _transform(chunk, encoding, cb) {
     this.str += chunk.toString();
-    this.str.split(os.EOL)
-        .forEach((val) => {
+    const line = this.str.split(os.EOL);
+    
+    if (line.length > 1) { line.forEach((val) => {
           this.push(val);
-});
+        });
+        }
 
 cb();
   }
